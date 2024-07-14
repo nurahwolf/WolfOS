@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "Finalising /etc/os-release"
+source "${BUILDROOT}/etc/os-release"
+echo "PRETTY_NAME=\"${NAME} (${VARIANT} ${IMAGE_VERSION:-n/a})\"" >> "${BUILDROOT}/etc/os-release"
