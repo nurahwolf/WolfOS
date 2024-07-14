@@ -1,0 +1,3 @@
+[submodule "mkosi.extra/root"]
+	path = mkosi.extra/root
+	url = git@github.com:nurahwolf/dotfiles.git

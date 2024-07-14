@@ -10,6 +10,13 @@ if [ "$1" = "final" ] && command -v pacman-key; then
     pacman-key --populate blackarch
     pacman-key --populate cachyos
 
+    if command -v starship; then
+    	# Add starship to root, if starship is installed
+    	echo "starship: Letting root use me"
+     	mkdir -p touch /root/.config/fish/conf.d
+     	echo "starship init fish | source" > /root/.config/fish/conf.d/starship.fish
+    fi
+
     if command -v sed; then
     	# This step is only needed if manually installed packages are included in the image
     	echo "pacman: Purge untrusted packages"
