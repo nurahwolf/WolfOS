@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Once the image is built, ensure that pacman is ready to party
+if [ "$1" = "final" ] && command -v pacman-key; then
+	echo "pacman-key: initialising and populating keys"
+
+    pacman-key --init
+    pacman-key --populate archlinux
+    pacman-key --populate blackarch
+    pacman-key --populate cachyos
+
+    if command -v sed; then
+    	# This step is only needed if manually installed packages are included in the image
+    	echo "pacman: Purge untrusted packages"
+        find /var/lib/pacman/local/ -type f -name "desc" -exec sed -i '/^%INSTALLED_DB%$/,+2d' {} \;
+    fi
+fi
