@@ -1,0 +1,14 @@
+# Sensitive mkosi files, or files that should not be in git
+mkosi.crt
+mkosi.key
+mkosi.local.conf
+mkosi.rootpw
+
+# Don't commit the credentials folder at all, as for now we don't use it
+mkosi.credentials
+
+# Block any artifacts from being accidentally commited
+mkosi.build/
+mkosi.cache/
+mkosi.images/
+mkosi.output/
