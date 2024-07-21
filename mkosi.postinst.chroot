@@ -22,4 +22,11 @@ if [ "$1" = "final" ] && command -v pacman-key; then
     	echo "pacman: Purge untrusted packages"
         find /var/lib/pacman/local/ -type f -name "desc" -exec sed -i '/^%INSTALLED_DB%$/,+2d' {} \;
     fi
+
+    if command -v 1password && command -v cachy-browser; then
+    	# If 1password & cachy-browser is installed, allow cachy-browser to use it
+     	echo "1pass: Allowing cachy-browser"
+     	mkdir /etc/1password # Make sure this owned by root
+      	echo "cachy-browser" > /etc/1password/custom_allowed_browsers.old # Ditto
+       	chmod 755 /etc/1password/custom_allowed_browsers # Tweak permissions
 fi
