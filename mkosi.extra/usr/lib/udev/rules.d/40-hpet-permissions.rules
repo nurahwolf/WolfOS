@@ -1,0 +1,4 @@
+# https://github.com/CachyOS/CachyOS-Settings/blob/master/usr/lib/udev/rules.d/40-hpet-permissions.rules
+KERNEL=="rtc0", GROUP="audio"
+
+KERNEL=="hpet", GROUP="audio"

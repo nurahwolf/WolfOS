@@ -1,0 +1,3 @@
+# https://github.com/CachyOS/CachyOS-Settings/blob/master/usr/lib/udev/rules.d/99-ntsync.rules
+
+KERNEL=="ntsync", MODE="0644"
