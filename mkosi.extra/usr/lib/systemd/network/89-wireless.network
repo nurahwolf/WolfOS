@@ -1,0 +1,24 @@
+#┌──────────┬───────────────────┬───────────┐
+#│ Version	│	Last Modified	│	Manager	│
+#├──────────┼───────────────────┼───────────┤
+#│ 0.0.1	│	2024-07-12		│	Moshi		│
+#└──────────┴───────────────────┴───────────┘
+# Enable DHCPv4 and DHCPv6 on all wireless network links
+
+[Match]
+Type=wlan
+WLANInterfaceType=station
+
+
+[Network]
+DHCP=yes
+# Allow MulticastDNS
+MulticastDNS=true
+# Use DNSSEC if available
+DNSSEC=allow-downgrade
+
+
+[Route]
+# Go faster by default, multiple of the MSS (1460 bytes). 10 by default. Set to 10 on slow networks.
+InitialCongestionWindow=50
+InitialAdvertisedReceiveWindow=50
