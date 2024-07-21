@@ -1,0 +1,16 @@
+# Customised mkinitcpio preset file for the 'linux-cachyos-rc' package, using UKIs
+
+#ALL_config="/etc/mkinitcpio.conf"
+ALL_kver="/boot/vmlinuz-linux-cachyos-rc"
+
+PRESETS=('default')
+
+#default_config="/etc/mkinitcpio.conf"
+#default_image="/boot/moshi-rc.img"
+default_uki="/efi/EFI/Linux/moshi-rc.efi"
+#default_options="--splash /usr/share/systemd/bootctl/splash-arch.bmp"
+
+#fallback_config="/etc/mkinitcpio.conf"
+#fallback_image="/boot/moshi-rc-fallback.img"
+fallback_uki="/efi/EFI/Linux/moshi-rc-fallback.efi"
+#fallback_options="-S autodetect"
