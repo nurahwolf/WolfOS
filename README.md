@@ -1,10 +1,12 @@
-# moshi
+# WolfOS
 A work in progress mkosi configuration around Arch Linux with the following goals:
 
 - **Bleeding Edge:** Using CachyOS and Arch as a base to have the latest and greatest.
 - **Modern:** Uses some of the newest best practices, such as using UKIs and containers.
 - **Secure:** Secure Boot, Encrypted, TPM... All that goodness.
 - **Legacy Free:** No GRUB, no BIOS support. By design.
+
+This is now following [SystemD - ParticleOS](https://github.com/systemd/particleos)!
 
 #### Thanks
 This repository takes insipration from or gives credits to the following projects and resources:
@@ -79,3 +81,23 @@ This project contains a lot of packages that I generally like. Some of them are 
 
 #### Issues Tracked
 - None for now!
+
+### Profiles
+
+Baselines:
+- Arch: Arch Linux Baseline Configuration
+    - +cachyos: CachyOS Optimisations
+    - +chaoticAUR: Add Chaotic AUR Repos
+    - +blackarch: Add Blackarch Repos
+- kali: Kali Linux Baseline Configuration
+
+Profiles:
+    - attack:                   Includes penetration testing tools
+        - windows:              Windows Specific Tools
+    - minimal:                  A simple container with the bare essentials. Contains the following profiles
+        - minimal-vm:           Virtual Machine optimisations (VMware, Virtio, etc)
+        - minimal-container:    Container optimisations (no bloat, effectively)
+        - -minimal-hypervisor:  Excluded from minimal, uses KVM and has some libvirt bootstrapping around it
+    - Desktop:                  Desktop Profiles
+        - gnome:                Deploy the 'gnome' desktop environment
+        - plasma:               Deploy the 'plasma' desktop environment
