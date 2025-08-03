@@ -11,6 +11,11 @@ if type -q zoxide
 	zoxide init --cmd cd fish | source
 end
 
+## If fzf is installed, init it
+if type -q fzf
+	fzf --fish | source
+end
+
 ## A welcome message for the user, using fastfetch if installed
 function fish_greeting
 	if command -q fastfetch
